@@ -1,0 +1,90 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #260656;
+    color: #dad9da;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+    background-color: #b9f40a;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.cell {
+    background: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.cell:hover {
+    transform: scale(1.1);
+    background: #d7d1d1;
+}
+
+.cell.X {
+    color: #ff0066;
+    animation: markX 0.5s ease-in-out;
+}
+
+.cell.O {
+    color: #0066ff;
+    animation: markO 0.5s ease-in-out;
+}
+
+@keyframes markX {
+    from { transform: scale(0.5); }
+    to { transform: scale(1); }
+}
+
+@keyframes markO {
+    from { transform: scale(0.5); }
+    to { transform: scale(1); }
+}
+
+.winning-cell {
+    background: #0eb2d7 !important;
+    animation: winningHighlight 0.5s ease-in-out;
+}
+
+@keyframes winningHighlight {
+    from { background: #333; }
+    to { background: #11ab11; }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background: #fff;
+    color: #008cff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #f0f0f0;
+    transform: translateY(-3px);
+}
